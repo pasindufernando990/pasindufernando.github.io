@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pasindu Fernando — Portfolio</title>
-  <meta name="description" content="Full-Stack Software Engineer. Java/Node, React, SQL/PLSQL, integrations, and automation with a focus on performance & reliability." />
+  <meta name="description" content="Full-Stack Software Engineer. Java/Node, React, Oracle/PLSQL, integrations, and automation—focused on performance & reliability." />
   <meta property="og:title" content="Pasindu Fernando — Portfolio" />
-  <meta property="og:description" content="Full-Stack Software Engineer. Java/Node, React, SQL/PLSQL, integrations, and automation with a focus on performance & reliability." />
+  <meta property="og:description" content="Full-Stack Software Engineer. Java/Node, React, Oracle/PLSQL, integrations, and automation—focused on performance & reliability." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop" />
   <link rel="icon" href="https://fav.farm/⚡" />
@@ -23,25 +23,46 @@
     }
   </script>
   <style>
+    /* Background grid & glass */
     .grid-bg { background-image: radial-gradient(rgba(99,102,241,.15) 1px, transparent 1px); background-size: 20px 20px; }
     .glow { box-shadow: 0 0 0 3px rgba(99,102,241,.25), 0 20px 80px rgba(99,102,241,.35); }
     .glass { background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.3)); backdrop-filter: blur(10px); }
     .dark .glass { background: linear-gradient(180deg, rgba(2,6,23,.6), rgba(2,6,23,.3)); }
+    /* Reveal on scroll */
     .reveal { opacity: 0; transform: translateY(24px); transition: all .7s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
+    /* Float & tilt */
     @keyframes float { 0%,100%{ transform: translateY(0)} 50%{ transform: translateY(-8px)} }
     .tilt { transform-style: preserve-3d; transition: transform .25s ease, box-shadow .25s ease; }
     .tilt:hover { box-shadow: 0 18px 60px rgba(2,6,23,.25); }
     .shine { position: relative; overflow: hidden; }
-    .shine::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.2) 35%, transparent 70%); transform: translateX(-120%); transition: transform .9s ease; pointer-events: none; }
-    .shine:hover::before { transform: translateX(120%); }
-    .chip { @apply px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs; }
+    .shine::before { content:""; position:absolute; inset:0; background:linear-gradient(120deg,transparent 0%, rgba(255,255,255,.2) 35%, transparent 70%); transform:translateX(-120%); transition:transform .9s ease; pointer-events:none; }
+    .shine:hover::before { transform:translateX(120%); }
+    .chip { padding: .25rem .5rem; border-radius: 9999px; background: rgba(148,163,184,.2); font-size: .75rem; line-height: 1rem; display:inline-block; }
+    /* Welcome splash */
+    #preloader { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: radial-gradient(60rem 30rem at 50% 20%, rgba(31,95,255,.25), transparent), #020617; color: #fff; transition: opacity .7s ease; }
+    #preloader.hidden { opacity: 0; pointer-events: none; }
+    @keyframes sweep { 0%{ transform: translateX(-100%);} 100%{ transform: translateX(200%);} }
+    .bar { position: relative; height: .25rem; width: 16rem; border-radius: 9999px; background: rgba(255,255,255,.08); overflow: hidden; margin: 1rem auto 0; }
+    .bar::after { content:""; position:absolute; inset:0; width: 50%; background: linear-gradient(90deg, #3b75ff, #a855f7, #22d3ee); filter: blur(.5px); animation: sweep 1.2s linear infinite; }
+    /* Gradient “image” blocks for cards w/o screenshots */
+    .card-gradient { background: radial-gradient(circle at 20% 20%, rgba(31,95,255,.35), transparent 40%), radial-gradient(circle at 80% 30%, rgba(168,85,247,.35), transparent 45%), radial-gradient(circle at 50% 80%, rgba(34,211,238,.3), transparent 40%); }
   </style>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="antialiased bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100">
 
-  <!-- Nav -->
+  <!-- Welcome splash -->
+  <div id="preloader">
+    <div class="text-center px-6">
+      <div class="text-brand-400 font-semibold tracking-wide text-2xl sm:text-3xl">Welcome to</div>
+      <div class="mt-2 text-4xl sm:text-6xl font-extrabold">Pasindu Fernando</div>
+      <div class="mt-1 text-lg sm:text-2xl text-slate-400">Portfolio</div>
+      <div class="bar"></div>
+    </div>
+  </div>
+
+  <!-- Sticky Nav -->
   <header class="fixed top-0 inset-x-0 z-50">
     <div class="mx-auto max-w-7xl px-4">
       <div class="mt-4 flex items-center justify-between rounded-2xl border border-slate-200/60 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/70 backdrop-blur supports-[backdrop-filter]:glass py-3 pl-4 pr-2 glow">
@@ -80,7 +101,7 @@
           Full-Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">Software Engineer</span>
         </h1>
         <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-prose">
-          I build secure, scalable software end-to-end — Java/Node backends with SQL/PLSQL, modern React UIs, and well-designed APIs & integrations — focused on performance, automation, and developer experience.
+          I build secure, scalable software—Java/Node backends with SQL/PLSQL, modern React UIs, and robust APIs & integrations—focused on performance, automation, and developer experience.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="#projects" class="rounded-xl bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 font-semibold">View Projects</a>
@@ -93,7 +114,7 @@
         </div>
       </div>
 
-      <!-- Portrait - keep full head visible -->
+      <!-- Portrait (no cropped head) -->
       <div class="relative reveal">
         <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-brand-600/20 via-fuchsia-600/20 to-cyan-500/20 blur-2xl"></div>
         <div class="relative rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/60 p-6 glass">
@@ -101,8 +122,8 @@
             <img
               src="./me.jpg?v=4"
               alt="Pasindu Fernando — profile"
-              class="h-full w-full object-cover object-top animate-[float_6s_ease-in-out_infinite]"
-              style="object-position: 50% 14%;"  <!-- more headroom -->
+              class="h-full w-full object-cover animate-[float_6s_ease-in-out_infinite]"
+              style="object-position: 50% 14%;"
               loading="eager" decoding="async"
               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop';"
             />
@@ -137,83 +158,54 @@
     <div class="mx-auto max-w-7xl px-4">
       <div class="reveal">
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Featured Projects</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">Real systems with auth, data, and UI—using your stack and shipped with quality.</p>
+        <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">Real systems with auth, data, and UI—plus performance & delivery engineering.</p>
       </div>
 
       <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- 1. Movie Reservation -->
+        <!-- Resume projects (5) -->
         <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden">
-            <img src="./movie.jpg?v=1" alt="Online Movie Reservation System" class="w-full h-full object-cover"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=1400&auto=format&fit=crop';" loading="lazy" decoding="async"/>
-          </div>
-          <div class="p-6 flex flex-col gap-3">
-            <h3 class="text-xl font-bold">Online Movie Reservation (Web & Mobile)</h3>
-            <p class="text-slate-600 dark:text-slate-300">Cross-platform ticket booking with secure auth and cloud deployment.</p>
-            <div class="mt-1 flex flex-wrap gap-2">
-              <span class="chip">React</span><span class="chip">Node</span><span class="chip">MongoDB</span><span class="chip">Android Studio</span>
-            </div>
-          </div>
+          <div class="aspect-[16/9] overflow-hidden"><img src="./movie.jpg?v=1" alt="Online Movie Reservation" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=1400&auto=format&fit=crop';"></div>
+          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Online Movie Reservation (Web & Mobile)</h3><p class="text-slate-600 dark:text-slate-300">Cross-platform ticket booking with secure auth & cloud deploy.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">React</span><span class="chip">Node</span><span class="chip">MongoDB</span><span class="chip">Android Studio</span></div></div>
         </article>
 
-        <!-- 2. Inventory Control (CASANOVA) -->
         <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden">
-            <img src="./casanova.jpg?v=1" alt="Inventory Control System (CASANOVA Pvt Ltd)" class="w-full h-full object-cover"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop';" loading="lazy" decoding="async"/>
-          </div>
-          <div class="p-6 flex flex-col gap-3">
-            <h3 class="text-xl font-bold">Inventory Control System (CASANOVA Pvt Ltd)</h3>
-            <p class="text-slate-600 dark:text-slate-300">Automated stock management with real-time tracking and reporting dashboard.</p>
-            <div class="mt-1 flex flex-wrap gap-2">
-              <span class="chip">React</span><span class="chip">Node</span><span class="chip">MongoDB</span>
-            </div>
-          </div>
+          <div class="aspect-[16/9] overflow-hidden"><img src="./casanova.jpg?v=1" alt="Inventory Control System (CASANOVA)" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop';"></div>
+          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Inventory Control System (CASANOVA Pvt Ltd)</h3><p class="text-slate-600 dark:text-slate-300">Automated stock, realtime tracking, and reporting dashboard.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">React</span><span class="chip">Node</span><span class="chip">MongoDB</span></div></div>
         </article>
 
-        <!-- 3. Vehicle Service Center App -->
         <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden">
-            <img src="./mobile.jpg?v=1" alt="Mobile Application for Vehicle Service Center" class="w-full h-full object-cover"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1400&auto=format&fit=crop';" loading="lazy" decoding="async"/>
-          </div>
-          <div class="p-6 flex flex-col gap-3">
-            <h3 class="text-xl font-bold">Mobile App — Vehicle Service Center</h3>
-            <p class="text-slate-600 dark:text-slate-300">Customer booking app with Firebase realtime data sync.</p>
-            <div class="mt-1 flex flex-wrap gap-2">
-              <span class="chip">Android</span><span class="chip">Java</span><span class="chip">Firebase</span>
-            </div>
-          </div>
+          <div class="aspect-[16/9] overflow-hidden"><img src="./mobile.jpg?v=1" alt="Vehicle Service Center App" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1400&auto=format&fit=crop';"></div>
+          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Mobile App — Vehicle Service Center</h3><p class="text-slate-600 dark:text-slate-300">Bookings & service tracking with Firebase realtime sync.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">Android</span><span class="chip">Java</span><span class="chip">Firebase</span></div></div>
         </article>
 
-        <!-- 4. Hotel Reservation System -->
         <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden">
-            <img src="./hotel.jpg?v=1" alt="Online Hotel Reservation System" class="w-full h-full object-cover"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1400&auto=format&fit=crop';" loading="lazy" decoding="async"/>
-          </div>
-          <div class="p-6 flex flex-col gap-3">
-            <h3 class="text-xl font-bold">Online Hotel Reservation System</h3>
-            <p class="text-slate-600 dark:text-slate-300">End-to-end booking with database-driven availability management.</p>
-            <div class="mt-1 flex flex-wrap gap-2">
-              <span class="chip">Java Servlet</span><span class="chip">HTML/CSS/JS</span><span class="chip">MySQL</span>
-            </div>
-          </div>
+          <div class="aspect-[16/9] overflow-hidden"><img src="./hotel.jpg?v=1" alt="Hotel Reservation System" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1400&auto=format&fit=crop';"></div>
+          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Online Hotel Reservation System</h3><p class="text-slate-600 dark:text-slate-300">End-to-end booking with DB-driven availability.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">Java Servlet</span><span class="chip">HTML/CSS/JS</span><span class="chip">MySQL</span></div></div>
         </article>
 
-        <!-- 5. Insurance Management System -->
         <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden">
-            <img src="./power.jpg?v=1" alt="Online Insurance Management System" class="w-full h-full object-cover"
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556745753-b2904692b3cd?q=80&w=1400&auto=format&fit=crop';" loading="lazy" decoding="async"/>
+          <div class="aspect-[16/9] overflow-hidden"><img src="./power.jpg?v=1" alt="Insurance Management System" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556745753-b2904692b3cd?q=80&w=1400&auto=format&fit=crop';"></div>
+          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Online Insurance Management System</h3><p class="text-slate-600 dark:text-slate-300">Secure policy & claims portal with MySQL backend.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">PHP</span><span class="chip">HTML/CSS/JS</span><span class="chip">MySQL</span></div></div>
+        </article>
+
+        <!-- Engineering projects (3) -->
+        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
+          <div class="aspect-[16/9] overflow-hidden"><img src="./oracle.jpg?v=1" alt="Oracle Performance Tuning" class="w-full h-full object-cover" /></div>
+          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Oracle Performance Tuning</h3><p class="text-slate-600 dark:text-slate-300">Refactored PL/SQL, added indexes, rewrote heavy joins — cut key report time by ~70%.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">Oracle</span><span class="chip">PL/SQL</span><span class="chip">Performance</span></div></div>
+        </article>
+
+        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
+          <div class="aspect-[16/9] card-gradient flex items-center justify-center">
+            <i data-lucide="shield-check" class="w-16 h-16 opacity-70"></i>
           </div>
-          <div class="p-6 flex flex-col gap-3">
-            <h3 class="text-xl font-bold">Online Insurance Management System</h3>
-            <p class="text-slate-600 dark:text-slate-300">Secure policy & claims portal with MySQL backend.</p>
-            <div class="mt-1 flex flex-wrap gap-2">
-              <span class="chip">PHP</span><span class="chip">HTML/CSS/JS</span><span class="chip">MySQL</span>
-            </div>
+          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Access Control UI (ACL)</h3><p class="text-slate-600 dark:text-slate-300">UX for dynamic predicates, validation, import/export — faster admin, fewer errors.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">UX</span><span class="chip">Aurena</span><span class="chip">TypeScript</span></div></div>
+        </article>
+
+        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
+          <div class="aspect-[16/9] card-gradient flex items-center justify-center">
+            <i data-lucide="rocket" class="w-16 h-16 opacity-70"></i>
           </div>
+          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Release Automation & QA</h3><p class="text-slate-600 dark:text-slate-300">Schema diff checks, smoke tests, rollout gates — improved deployment confidence & TTR.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">CI/CD</span><span class="chip">Shell</span><span class="chip">Postman</span></div></div>
         </article>
       </div>
     </div>
@@ -236,12 +228,12 @@
           </div>
           <h3 class="font-bold mt-1">Backend, APIs & Integrations • Performance & Reliability</h3>
           <ul class="mt-2 list-disc pl-5 text-slate-600 dark:text-slate-300">
-            <li>Designed and maintained enterprise authz features (role-based access, ACLs); improved configuration UX and validation.</li>
-            <li>Built and enhanced REST APIs and data controls; added import/export workflows and filter validation.</li>
-            <li>Optimized Java + SQL/PLSQL and Azure/Okta SCIM provisioning to reduce latency and improve reliability.</li>
-            <li>Implemented digital-signature workflows and ensured durable storage of signed artifacts.</li>
-            <li>Wrote unit/integration tests (Cucumber), documentation, and facilitated Agile ceremonies as Scrum Master.</li>
-            <li>Conducted resilience testing via chaos engineering (DoS, memory, and network fault injections).</li>
+            <li>RBAC/ACL features; improved configuration UX and validation.</li>
+            <li>REST APIs & data controls; import/export workflows; filter validation.</li>
+            <li>Optimized Java + SQL/PLSQL and Azure/Okta SCIM provisioning.</li>
+            <li>Digital-signature workflows with durable storage.</li>
+            <li>Tests: unit/integration (Cucumber), docs, and Scrum facilitation.</li>
+            <li>Resilience: DoS/memory/network fault-injection experiments.</li>
           </ul>
         </li>
         <li class="reveal relative pl-6 py-6">
@@ -253,9 +245,9 @@
           </div>
           <h3 class="font-bold mt-1">Entrepreneurial • Digital Marketing • AI-assisted Content</h3>
           <ul class="mt-2 list-disc pl-5 text-slate-600 dark:text-slate-300">
-            <li>Built & managed Shopify/WordPress brands; SEO + Meta Ads; conversion-focused UX.</li>
-            <li>Launched AdSense sites with AI-assisted content; GA & Search Console; conversion optimization.</li>
-            <li>Created brand assets and storefront UIs; automated repetitive workflows.</li>
+            <li>Shopify/WordPress brands; SEO + Meta Ads; conversion-focused UX.</li>
+            <li>AdSense sites with AI-assisted content; GA & Search Console.</li>
+            <li>Brand assets and storefront UIs; automated repetitive workflows.</li>
           </ul>
         </li>
       </ol>
@@ -287,7 +279,7 @@
       </div>
       <div class="mt-8 grid md:grid-cols-3 gap-5">
         <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6"><div class="flex items-center gap-2 font-bold"><i data-lucide="api"></i> API Development</div><p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">Design, auth, versioning, and docs for maintainable services.</p></div>
-        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6"><div class="flex items-center gap-2 font-bold"><i data-lucide="sparkles"></i> Performance & Tuning</div><p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">Query plans, indexes, caching, profiling.</p></div>
+        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6"><div class="flex items-center gap-2 font-bold"><i data-lucide="sparkles"></i> Performance & Tuning</div><p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">Query plans, indexing, caching, profiling.</p></div>
         <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6"><div class="flex items-center gap-2 font-bold"><i data-lucide="shield"></i> Security & Auth</div><p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">RBAC, ACLs, secure enterprise flows.</p></div>
       </div>
     </div>
@@ -312,7 +304,7 @@
             <a href="https://x.com/" class="hover:text-brand-600 flex items-center gap-1" target="_blank" rel="noreferrer"><i data-lucide="twitter"></i> X</a>
           </div>
         </div>
-        <form class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6 grid gap-3" action="https://formspree.io/f/xyz" method="POST">
+        <form class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6 grid gap-3" action="https://formspree.io/f/xqadnlbj" method="POST">
           <div class="grid sm:grid-cols-2 gap-3">
             <input class="rounded-xl border border-slate-300/70 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 px-4 py-3" placeholder="Your name" name="name" required>
             <input class="rounded-xl border border-slate-300/70 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 px-4 py-3" placeholder="Email" type="email" name="email" required>
@@ -338,7 +330,7 @@
   </footer>
 
   <script>
-    // Theme toggle
+    // Theme toggle with persistence
     const themeToggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     const stored = localStorage.getItem('theme');
@@ -348,16 +340,14 @@
       localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
     });
 
-    // Reveal on scroll
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); observer.unobserve(e.target);} });
-    }, { threshold: 0.08 });
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); observer.unobserve(e.target);} }); }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
     // Icons
     lucide.createIcons();
 
-    // Tilt
+    // Tilt effect
     document.querySelectorAll('.tilt').forEach(card => {
       const damp = 6;
       card.addEventListener('mousemove', (e) => {
@@ -368,6 +358,11 @@
         card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
       });
       card.addEventListener('mouseleave', () => { card.style.transform = 'rotateX(0deg) rotateY(0deg)'; });
+    });
+
+    // Welcome splash hide
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 900);
     });
 
     // Year
