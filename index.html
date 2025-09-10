@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pasindu Fernando — Portfolio</title>
-  <meta name="description" content="Full-Stack Software Engineer. Java/Node, React, Oracle/PLSQL, integrations, and automation—focused on performance & reliability." />
+  <meta name="description" content="Full-Stack Software Engineer. Java/Node, React, Oracle/PLSQL, integrations and automation—focused on performance & reliability." />
   <meta property="og:title" content="Pasindu Fernando — Portfolio" />
-  <meta property="og:description" content="Full-Stack Software Engineer. Java/Node, React, Oracle/PLSQL, integrations, and automation—focused on performance & reliability." />
+  <meta property="og:description" content="Full-Stack Software Engineer. Java/Node, React, Oracle/PLSQL, integrations and automation—focused on performance & reliability." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop" />
   <link rel="icon" href="https://fav.farm/⚡" />
@@ -38,15 +38,16 @@
     .shine { position: relative; overflow: hidden; }
     .shine::before { content:""; position:absolute; inset:0; background:linear-gradient(120deg,transparent 0%, rgba(255,255,255,.2) 35%, transparent 70%); transform:translateX(-120%); transition:transform .9s ease; pointer-events:none; }
     .shine:hover::before { transform:translateX(120%); }
-    .chip { padding: .25rem .5rem; border-radius: 9999px; background: rgba(148,163,184,.2); font-size: .75rem; line-height: 1rem; display:inline-block; }
+    .chip { padding: .25rem .5rem; border-radius: 9999px; background: rgba(148,163,184,.25); font-size: .75rem; line-height: 1rem; display:inline-block; }
+    /* Career gradient cards like your screenshot */
+    .card-gradient { background: radial-gradient(circle at 20% 20%, rgba(31,95,255,.35), transparent 40%), radial-gradient(circle at 80% 30%, rgba(168,85,247,.35), transparent 45%), radial-gradient(circle at 50% 80%, rgba(34,211,238,.3), transparent 40%); }
+    .card-overlay { background: linear-gradient(to bottom, transparent 55%, rgba(2,6,23,.7)); }
     /* Welcome splash */
     #preloader { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: radial-gradient(60rem 30rem at 50% 20%, rgba(31,95,255,.25), transparent), #020617; color: #fff; transition: opacity .7s ease; }
     #preloader.hidden { opacity: 0; pointer-events: none; }
     @keyframes sweep { 0%{ transform: translateX(-100%);} 100%{ transform: translateX(200%);} }
-    .bar { position: relative; height: .25rem; width: 16rem; border-radius: 9999px; background: rgba(255,255,255,.08); overflow: hidden; margin: 1rem auto 0; }
+    .bar { position: relative; height: .25rem; width: 16rem; border-radius: 9999px; background: rgba(255,255,255,.1); overflow: hidden; margin: 1rem auto 0; }
     .bar::after { content:""; position:absolute; inset:0; width: 50%; background: linear-gradient(90deg, #3b75ff, #a855f7, #22d3ee); filter: blur(.5px); animation: sweep 1.2s linear infinite; }
-    /* Gradient “image” blocks for cards w/o screenshots */
-    .card-gradient { background: radial-gradient(circle at 20% 20%, rgba(31,95,255,.35), transparent 40%), radial-gradient(circle at 80% 30%, rgba(168,85,247,.35), transparent 45%), radial-gradient(circle at 50% 80%, rgba(34,211,238,.3), transparent 40%); }
   </style>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -57,7 +58,7 @@
     <div class="text-center px-6">
       <div class="text-brand-400 font-semibold tracking-wide text-2xl sm:text-3xl">Welcome to</div>
       <div class="mt-2 text-4xl sm:text-6xl font-extrabold">Pasindu Fernando</div>
-      <div class="mt-1 text-lg sm:text-2xl text-slate-400">Portfolio</div>
+      <div class="mt-1 text-lg sm:text-2xl text-slate-300">Portfolio</div>
       <div class="bar"></div>
     </div>
   </div>
@@ -68,7 +69,8 @@
       <div class="mt-4 flex items-center justify-between rounded-2xl border border-slate-200/60 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/70 backdrop-blur supports-[backdrop-filter]:glass py-3 pl-4 pr-2 glow">
         <a href="#home" class="font-semibold tracking-tight">Pasindu <span class="text-brand-600">Fernando</span></a>
         <nav class="hidden md:flex gap-6 text-sm">
-          <a href="#projects" class="hover:text-brand-600">Projects</a>
+          <a href="#highlights" class="hover:text-brand-600">Career</a>
+          <a href="#projects" class="hover:text-brand-600">Personal Projects</a>
           <a href="#experience" class="hover:text-brand-600">Experience</a>
           <a href="#skills" class="hover:text-brand-600">Skills</a>
           <a href="#services" class="hover:text-brand-600">Services</a>
@@ -95,16 +97,16 @@
     <div class="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-10 items-center">
       <div class="reveal">
         <div class="inline-flex items-center gap-2 rounded-full border border-brand-600/30 bg-white/60 dark:bg-slate-900/60 px-3 py-1 text-xs font-semibold backdrop-blur">
-          <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span> Available for full-time roles
+          <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span> Available for full‑time roles
         </div>
         <h1 class="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-          Full-Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">Software Engineer</span>
+          Full‑Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">Software Engineer</span>
         </h1>
         <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-prose">
           I build secure, scalable software—Java/Node backends with SQL/PLSQL, modern React UIs, and robust APIs & integrations—focused on performance, automation, and developer experience.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#projects" class="rounded-xl bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 font-semibold">View Projects</a>
+          <a href="#highlights" class="rounded-xl bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 font-semibold">View Career Highlights</a>
           <a href="#contact" class="rounded-xl border border-slate-300/70 dark:border-slate-700 px-5 py-3 font-semibold">Contact</a>
           <a href="resume.pdf" class="rounded-xl border border-slate-300/70 dark:border-slate-700 px-5 py-3 font-semibold" download>Download Resume</a>
         </div>
@@ -114,19 +116,12 @@
         </div>
       </div>
 
-      <!-- Portrait (no cropped head) -->
+      <!-- Portrait (keep full head visible) -->
       <div class="relative reveal">
         <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-brand-600/20 via-fuchsia-600/20 to-cyan-500/20 blur-2xl"></div>
         <div class="relative rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/60 p-6 glass">
           <div class="rounded-2xl overflow-hidden aspect-[4/5]">
-            <img
-              src="./me.jpg?v=4"
-              alt="Pasindu Fernando — profile"
-              class="h-full w-full object-cover animate-[float_6s_ease-in-out_infinite]"
-              style="object-position: 50% 14%;"
-              loading="eager" decoding="async"
-              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop';"
-            />
+            <img src="./me.jpg?v=5" alt="Pasindu Fernando — profile" class="h-full w-full object-cover animate-[float_6s_ease-in-out_infinite]" style="object-position:50% 14%;" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop';" />
           </div>
           <div class="mt-4 grid grid-cols-3 gap-3 text-sm">
             <div class="rounded-xl border border-slate-200/70 dark:border-slate-800 p-3"><div class="font-bold">APIs</div><div class="text-slate-500">REST · Auth · SCIM</div></div>
@@ -138,7 +133,7 @@
     </div>
   </section>
 
-  <!-- Logos -->
+  <!-- Logos / Brands -->
   <section class="py-10">
     <div class="mx-auto max-w-7xl px-4">
       <div class="text-center text-sm text-slate-500">Worked with & built for</div>
@@ -153,59 +148,160 @@
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-20 bg-slate-100/60 dark:bg-slate-900/40">
+  <!-- Career Highlights (first) -->
+  <section id="highlights" class="py-20 bg-slate-900 text-white">
     <div class="mx-auto max-w-7xl px-4">
       <div class="reveal">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Featured Projects</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">Real systems with auth, data, and UI—plus performance & delivery engineering.</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Career Highlights</h2>
+        <p class="mt-2 text-slate-300 max-w-prose">Core engineering work shipped in enterprise environments.</p>
       </div>
 
       <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Resume projects (5) -->
-        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden"><img src="./movie.jpg?v=1" alt="Online Movie Reservation" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=1400&auto=format&fit=crop';"></div>
-          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Online Movie Reservation (Web & Mobile)</h3><p class="text-slate-600 dark:text-slate-300">Cross-platform ticket booking with secure auth & cloud deploy.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">React</span><span class="chip">Node</span><span class="chip">MongoDB</span><span class="chip">Android Studio</span></div></div>
-        </article>
-
-        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden"><img src="./casanova.jpg?v=1" alt="Inventory Control System (CASANOVA)" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop';"></div>
-          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Inventory Control System (CASANOVA Pvt Ltd)</h3><p class="text-slate-600 dark:text-slate-300">Automated stock, realtime tracking, and reporting dashboard.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">React</span><span class="chip">Node</span><span class="chip">MongoDB</span></div></div>
-        </article>
-
-        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden"><img src="./mobile.jpg?v=1" alt="Vehicle Service Center App" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1400&auto=format&fit=crop';"></div>
-          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Mobile App — Vehicle Service Center</h3><p class="text-slate-600 dark:text-slate-300">Bookings & service tracking with Firebase realtime sync.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">Android</span><span class="chip">Java</span><span class="chip">Firebase</span></div></div>
-        </article>
-
-        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden"><img src="./hotel.jpg?v=1" alt="Hotel Reservation System" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1400&auto=format&fit=crop';"></div>
-          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Online Hotel Reservation System</h3><p class="text-slate-600 dark:text-slate-300">End-to-end booking with DB-driven availability.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">Java Servlet</span><span class="chip">HTML/CSS/JS</span><span class="chip">MySQL</span></div></div>
-        </article>
-
-        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden"><img src="./power.jpg?v=1" alt="Insurance Management System" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556745753-b2904692b3cd?q=80&w=1400&auto=format&fit=crop';"></div>
-          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Online Insurance Management System</h3><p class="text-slate-600 dark:text-slate-300">Secure policy & claims portal with MySQL backend.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">PHP</span><span class="chip">HTML/CSS/JS</span><span class="chip">MySQL</span></div></div>
-        </article>
-
-        <!-- Engineering projects (3) -->
-        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] overflow-hidden"><img src="./oracle.jpg?v=1" alt="Oracle Performance Tuning" class="w-full h-full object-cover" /></div>
-          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Oracle Performance Tuning</h3><p class="text-slate-600 dark:text-slate-300">Refactored PL/SQL, added indexes, rewrote heavy joins — cut key report time by ~70%.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">Oracle</span><span class="chip">PL/SQL</span><span class="chip">Performance</span></div></div>
-        </article>
-
-        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] card-gradient flex items-center justify-center">
-            <i data-lucide="shield-check" class="w-16 h-16 opacity-70"></i>
+        <!-- SCIM Provisioning -->
+        <article class="reveal tilt shine rounded-3xl border border-white/5 bg-slate-950/60 overflow-hidden">
+          <div class="aspect-[16/9] card-gradient relative flex items-center justify-center">
+            <i data-lucide="users" class="w-16 h-16 opacity-80"></i>
+            <div class="absolute inset-0 card-overlay"></div>
           </div>
-          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Access Control UI (ACL)</h3><p class="text-slate-600 dark:text-slate-300">UX for dynamic predicates, validation, import/export — faster admin, fewer errors.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">UX</span><span class="chip">Aurena</span><span class="chip">TypeScript</span></div></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">SCIM Provisioning (Azure AD / Okta)</h3>
+            <p class="mt-2 text-slate-300">Designed secure SCIM endpoints with RBAC, token rotation & observability; reduced sync latency & failures.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="chip bg-white/10">SCIM</span><span class="chip bg-white/10">OAuth2</span><span class="chip bg-white/10">REST</span>
+            </div>
+          </div>
         </article>
 
-        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
-          <div class="aspect-[16/9] card-gradient flex items-center justify-center">
-            <i data-lucide="rocket" class="w-16 h-16 opacity-70"></i>
+        <!-- Standard Permission Sets & RBAC -->
+        <article class="reveal tilt shine rounded-3xl border border-white/5 bg-slate-950/60 overflow-hidden">
+          <div class="aspect-[16/9] card-gradient relative flex items-center justify-center">
+            <i data-lucide="key-round" class="w-16 h-16 opacity-80"></i>
+            <div class="absolute inset-0 card-overlay"></div>
           </div>
-          <div class="p-6 flex flex-col gap-3"><h3 class="text-xl font-bold">Release Automation & QA</h3><p class="text-slate-600 dark:text-slate-300">Schema diff checks, smoke tests, rollout gates — improved deployment confidence & TTR.</p><div class="mt-1 flex flex-wrap gap-2"><span class="chip">CI/CD</span><span class="chip">Shell</span><span class="chip">Postman</span></div></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Standard Permission Sets & RBAC</h3>
+            <p class="mt-2 text-slate-300">Defined reusable permission sets & resource predicates; consistent access controls and faster onboarding.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="chip bg-white/10">RBAC</span><span class="chip bg-white/10">Security</span><span class="chip bg-white/10">Governance</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ACL UI -->
+        <article class="reveal tilt shine rounded-3xl border border-white/5 bg-slate-950/60 overflow-hidden">
+          <div class="aspect-[16/9] card-gradient relative flex items-center justify-center">
+            <i data-lucide="shield-check" class="w-16 h-16 opacity-80"></i>
+            <div class="absolute inset-0 card-overlay"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Access Control UI (ACL)</h3>
+            <p class="mt-2 text-slate-300">UX for dynamic predicates, validation, and import/export — faster admin, fewer errors.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="chip bg-white/10">UX</span><span class="chip bg-white/10">Aurena/React</span><span class="chip bg-white/10">TypeScript</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Oracle Performance Tuning (with local image) -->
+        <article class="reveal tilt shine rounded-3xl border border-white/5 bg-slate-950/60 overflow-hidden">
+          <div class="aspect-[16/9] overflow-hidden relative">
+            <img src="./oracle.jpg?v=1" alt="Oracle Performance Tuning" class="w-full h-full object-cover opacity-90" />
+            <div class="absolute inset-0 card-overlay"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Oracle Performance Tuning</h3>
+            <p class="mt-2 text-slate-300">Refactored PL/SQL, added indexes, rewrote heavy joins — cut key reports by ~70%.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="chip bg-white/10">Oracle</span><span class="chip bg-white/10">PL/SQL</span><span class="chip bg-white/10">Performance</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Release Automation & QA -->
+        <article class="reveal tilt shine rounded-3xl border border-white/5 bg-slate-950/60 overflow-hidden">
+          <div class="aspect-[16/9] card-gradient relative flex items-center justify-center">
+            <i data-lucide="rocket" class="w-16 h-16 opacity-80"></i>
+            <div class="absolute inset-0 card-overlay"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold">Release Automation & QA</h3>
+            <p class="mt-2 text-slate-300">Schema diffs, smoke tests, rollout gates — improved deployment confidence & TTR.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="chip bg-white/10">CI/CD</span><span class="chip bg-white/10">Shell</span><span class="chip bg-white/10">Postman</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Projects -->
+  <section id="projects" class="py-20 bg-slate-100/60 dark:bg-slate-900/40">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="reveal">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Personal Projects</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">Hands-on apps built across web & mobile.</p>
+      </div>
+
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Movie Reservation -->
+        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
+          <div class="aspect-[16/9] overflow-hidden">
+            <img src="./movie.jpg?v=1" alt="Online Movie Reservation" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=1400&auto=format&fit=crop';" />
+          </div>
+          <div class="p-6 flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Online Movie Reservation (Web & Mobile)</h3>
+            <p class="text-slate-600 dark:text-slate-300">Cross‑platform ticket booking with secure auth & cloud deploy.</p>
+            <div class="mt-1 flex flex-wrap gap-2"><span class="chip">React</span><span class="chip">Node</span><span class="chip">MongoDB</span><span class="chip">Android Studio</span></div>
+          </div>
+        </article>
+
+        <!-- Inventory Control (CASANOVA) -->
+        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
+          <div class="aspect-[16/9] overflow-hidden">
+            <img src="./casanova.jpg?v=1" alt="Inventory Control System (CASANOVA Pvt Ltd)" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop';" />
+          </div>
+          <div class="p-6 flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Inventory Control System (CASANOVA Pvt Ltd)</h3>
+            <p class="text-slate-600 dark:text-slate-300">Automated stock management with realtime tracking & reporting dashboard.</p>
+            <div class="mt-1 flex flex-wrap gap-2"><span class="chip">React</span><span class="chip">Node</span><span class="chip">MongoDB</span></div>
+          </div>
+        </article>
+
+        <!-- Vehicle Service Center App -->
+        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
+          <div class="aspect-[16/9] overflow-hidden">
+            <img src="./mobile.jpg?v=1" alt="Mobile App for Vehicle Service Center" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1400&auto=format&fit=crop';" />
+          </div>
+          <div class="p-6 flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Mobile App — Vehicle Service Center</h3>
+            <p class="text-slate-600 dark:text-slate-300">Customer booking app with Firebase realtime sync.</p>
+            <div class="mt-1 flex flex-wrap gap-2"><span class="chip">Android</span><span class="chip">Java</span><span class="chip">Firebase</span></div>
+          </div>
+        </article>
+
+        <!-- Hotel Reservation -->
+        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
+          <div class="aspect-[16/9] overflow-hidden">
+            <img src="./hotel.jpg?v=1" alt="Online Hotel Reservation System" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1400&auto=format&fit=crop';" />
+          </div>
+          <div class="p-6 flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Online Hotel Reservation System</h3>
+            <p class="text-slate-600 dark:text-slate-300">End‑to‑end booking with database‑driven availability.</p>
+            <div class="mt-1 flex flex-wrap gap-2"><span class="chip">Java Servlet</span><span class="chip">HTML/CSS/JS</span><span class="chip">MySQL</span></div>
+          </div>
+        </article>
+
+        <!-- Insurance Management -->
+        <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition">
+          <div class="aspect-[16/9] overflow-hidden">
+            <img src="./power.jpg?v=1" alt="Online Insurance Management System" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556745753-b2904692b3cd?q=80&w=1400&auto=format&fit=crop';" />
+          </div>
+          <div class="p-6 flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Online Insurance Management System</h3>
+            <p class="text-slate-600 dark:text-slate-300">Secure policy & claims portal with MySQL backend.</p>
+            <div class="mt-1 flex flex-wrap gap-2"><span class="chip">PHP</span><span class="chip">HTML/CSS/JS</span><span class="chip">MySQL</span></div>
+          </div>
         </article>
       </div>
     </div>
@@ -216,7 +312,7 @@
     <div class="mx-auto max-w-7xl px-4">
       <div class="reveal">
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Experience</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">Delivering enterprise features end-to-end: requirements, design, implementation, performance, and support.</p>
+        <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">Delivering enterprise features end‑to‑end: requirements, design, implementation, performance, and support.</p>
       </div>
       <ol class="mt-10 relative border-s border-slate-200 dark:border-slate-800">
         <li class="reveal relative pl-6 py-6">
@@ -243,10 +339,10 @@
             <span>•</span><span>Ongoing</span>
             <span>•</span><span>Los Angeles, CA</span>
           </div>
-          <h3 class="font-bold mt-1">Entrepreneurial • Digital Marketing • AI-assisted Content</h3>
+          <h3 class="font-bold mt-1">Entrepreneurial • Digital Marketing • AI‑assisted Content</h3>
           <ul class="mt-2 list-disc pl-5 text-slate-600 dark:text-slate-300">
-            <li>Shopify/WordPress brands; SEO + Meta Ads; conversion-focused UX.</li>
-            <li>AdSense sites with AI-assisted content; GA & Search Console.</li>
+            <li>Shopify/WordPress brands; SEO + Meta Ads; conversion‑focused UX.</li>
+            <li>AdSense sites with AI‑assisted content; GA & Search Console.</li>
             <li>Brand assets and storefront UIs; automated repetitive workflows.</li>
           </ul>
         </li>
@@ -341,7 +437,9 @@
     });
 
     // Scroll reveal
-    const observer = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); observer.unobserve(e.target);} }); }, { threshold: 0.08 });
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); observer.unobserve(e.target);} });
+    }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
     // Icons
@@ -362,7 +460,7 @@
 
     // Welcome splash hide
     window.addEventListener('load', () => {
-      setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 900);
+      setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 1000);
     });
 
     // Year
