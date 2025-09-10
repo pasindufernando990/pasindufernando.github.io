@@ -16,40 +16,33 @@
       darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'] },
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial'] },
           colors: {
-            brand: { 50:'#f0f5ff',100:'#e0ebff',200:'#c2d7ff',300:'#a3c3ff',400:'#6f9cff',500:'#3b75ff',600:'#1f5fff',700:'#1347d6',800:'#0f35a3',900:'#0b2575' }
+            brand: {50:'#f0f5ff',100:'#e0ebff',200:'#c2d7ff',300:'#a3c3ff',400:'#6f9cff',500:'#3b75ff',600:'#1f5fff',700:'#1347d6',800:'#0f35a3',900:'#0b2575'}
           }
         }
       }
     }
   </script>
   <style>
-    /* Subtle grid background */
     .grid-bg { background-image: radial-gradient(rgba(99,102,241,.15) 1px, transparent 1px); background-size: 20px 20px; }
-    /* Glow ring */
     .glow { box-shadow: 0 0 0 3px rgba(99,102,241,.25), 0 20px 80px rgba(99,102,241,.35); }
-    /* Glass */
     .glass { background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.3)); backdrop-filter: blur(10px); }
     .dark .glass { background: linear-gradient(180deg, rgba(2,6,23,.6), rgba(2,6,23,.3)); }
-    /* Reveal on scroll */
     .reveal { opacity: 0; transform: translateY(24px); transition: all .7s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
-    /* Floating avatar */
     @keyframes float { 0%,100%{ transform: translateY(0)} 50%{ transform: translateY(-8px)} }
-    /* Tilt + shine effects */
     .tilt { transform-style: preserve-3d; transition: transform .25s ease, box-shadow .25s ease; }
     .tilt:hover { box-shadow: 0 18px 60px rgba(2,6,23,.25); }
     .shine { position: relative; overflow: hidden; }
-    .shine::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.25) 35%, transparent 68%); transform: translateX(-100%); transition: transform .9s ease; pointer-events: none; }
+    .shine::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.2) 35%, transparent 70%); transform: translateX(-100%); transition: transform .9s ease; pointer-events: none; }
     .shine:hover::before { transform: translateX(100%); }
   </style>
-  <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="antialiased bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100">
 
-  <!-- Sticky Nav -->
+  <!-- Nav -->
   <header class="fixed top-0 inset-x-0 z-50">
     <div class="mx-auto max-w-7xl px-4">
       <div class="mt-4 flex items-center justify-between rounded-2xl border border-slate-200/60 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/70 backdrop-blur supports-[backdrop-filter]:glass py-3 pl-4 pr-2 glow">
@@ -62,9 +55,7 @@
           <a href="#contact" class="hover:text-brand-600">Contact</a>
         </nav>
         <div class="flex items-center gap-2">
-          <button id="themeToggle" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle theme">
-            <i data-lucide="moon"></i>
-          </button>
+          <button id="themeToggle" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle theme"><i data-lucide="moon"></i></button>
           <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-3 py-2">
             <i data-lucide="send"></i><span>Hire me</span>
           </a>
@@ -85,10 +76,10 @@
           <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span> Available for full-time roles
         </div>
         <h1 class="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-          Full-Stack Software Engineer
+          Full-Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">Software Engineer</span>
         </h1>
         <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-prose">
-          I build secure, scalable software end-to-end — Java/Node backends with SQL/PLSQL, modern React UIs, and well-designed APIs & integrations — with a focus on performance, automation, and developer experience.
+          I ship secure, scalable software end-to-end—Java/Node backends with SQL/PLSQL, modern React UIs, and well-designed APIs & integrations—focused on performance, automation, and developer experience.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="#projects" class="rounded-xl bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 font-semibold">View Projects</a>
@@ -100,37 +91,32 @@
           <i data-lucide="briefcase" class="h-4 w-4"></i><span>3+ yrs experience</span>
         </div>
       </div>
+
+      <!-- Portrait: no cropped head -->
       <div class="relative reveal">
         <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-brand-600/20 via-fuchsia-600/20 to-cyan-500/20 blur-2xl"></div>
         <div class="relative rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/60 p-6 glass">
-          <!-- Your photo: place me.jpg in repo root -->
-          <img
-            src="./me.jpg?v=2"
-            alt="Pasindu Fernando — profile"
-            class="rounded-2xl h-72 w-full object-cover object-top animate-[float_6s_ease-in-out_infinite]"
-            loading="eager" decoding="async"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop';"
-          />
+          <div class="rounded-2xl overflow-hidden aspect-[4/5]">
+            <img
+              src="./me.jpg?v=3"
+              alt="Pasindu Fernando — profile"
+              class="h-full w-full object-cover animate-[float_6s_ease-in-out_infinite]"
+              style="object-position: 50% 15%;"  <!-- keep more headroom visible -->
+              loading="eager" decoding="async"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop';"
+            />
+          </div>
           <div class="mt-4 grid grid-cols-3 gap-3 text-sm">
-            <div class="rounded-xl border border-slate-200/70 dark:border-slate-800 p-3">
-              <div class="font-bold">APIs</div>
-              <div class="text-slate-500">REST · Auth · SCIM</div>
-            </div>
-            <div class="rounded-xl border border-slate-200/70 dark:border-slate-800 p-3">
-              <div class="font-bold">Databases</div>
-              <div class="text-slate-500">Oracle · SQL · PL/SQL</div>
-            </div>
-            <div class="rounded-xl border border-slate-200/70 dark:border-slate-800 p-3">
-              <div class="font-bold">Frontend</div>
-              <div class="text-slate-500">React · Aurena</div>
-            </div>
+            <div class="rounded-xl border border-slate-200/70 dark:border-slate-800 p-3"><div class="font-bold">APIs</div><div class="text-slate-500">REST · Auth · SCIM</div></div>
+            <div class="rounded-xl border border-slate-200/70 dark:border-slate-800 p-3"><div class="font-bold">Databases</div><div class="text-slate-500">Oracle · SQL · PL/SQL</div></div>
+            <div class="rounded-xl border border-slate-200/70 dark:border-slate-800 p-3"><div class="font-bold">Frontend</div><div class="text-slate-500">React · Aurena</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Logos / Brands -->
+  <!-- Logos -->
   <section class="py-10">
     <div class="mx-auto max-w-7xl px-4">
       <div class="text-center text-sm text-slate-500">Worked with & built for</div>
@@ -150,18 +136,23 @@
     <div class="mx-auto max-w-7xl px-4">
       <div class="reveal">
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Featured Projects</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">
-          Core engineering work in databases, security UX, and delivery automation — the things that make systems fast, safe, and reliable.
-        </p>
+        <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">Database performance, access control UX, and deployment automation.</p>
       </div>
 
       <div class="mt-10 grid md:grid-cols-3 gap-6">
         <!-- Oracle Performance Tuning -->
         <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden hover:shadow-2xl transition">
-          <img src="https://images.unsplash.com/photo-1581091014534-39a9696083fe?q=80&w=1200&auto=format&fit=crop" alt="Oracle Performance Tuning" class="w-full h-56 md:h-64 object-cover" />
+          <div class="aspect-[16/9] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1581091014534-39a9696083fe?q=80&w=1400&auto=format&fit=crop"
+              alt="Oracle Performance Tuning"
+              class="w-full h-full object-cover"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1400&auto=format&fit=crop';"
+            />
+          </div>
           <div class="p-6 flex flex-col gap-3">
             <h3 class="text-xl font-bold">Oracle Performance Tuning</h3>
-            <p class="text-slate-600 dark:text-slate-300">Refactored PL/SQL procedures, added indexes, and rewrote heavy joins — cutting query time by <strong>~70%</strong> on key reports.</p>
+            <p class="text-slate-600 dark:text-slate-300">Refactored PL/SQL, added indexes, rewrote heavy joins — cut report time by <strong>~70%</strong>.</p>
             <div class="mt-1 flex flex-wrap gap-2 text-xs">
               <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Oracle</span>
               <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">PL/SQL</span>
@@ -170,12 +161,18 @@
           </div>
         </article>
 
-        <!-- Access Control UI (ACL) -->
+        <!-- ACL UI -->
         <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden hover:shadow-2xl transition">
-          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop" alt="Access Control UI (ACL)" class="w-full h-56 md:h-64 object-cover" />
+          <div class="aspect-[16/9] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1400&auto=format&fit=crop"
+              alt="Access Control UI (ACL)"
+              class="w-full h-full object-cover"
+            />
+          </div>
           <div class="p-6 flex flex-col gap-3">
             <h3 class="text-xl font-bold">Access Control UI (ACL)</h3>
-            <p class="text-slate-600 dark:text-slate-300">Built a configuration UX for dynamic predicates, validation, and import/export; boosted admin speed and reduced misconfigurations.</p>
+            <p class="text-slate-600 dark:text-slate-300">Built configuration UX for dynamic predicates, validation, and import/export; reduced admin errors.</p>
             <div class="mt-1 flex flex-wrap gap-2 text-xs">
               <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">UX</span>
               <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Aurena</span>
@@ -186,10 +183,16 @@
 
         <!-- Release Automation & QA -->
         <article class="reveal tilt shine rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden hover:shadow-2xl transition">
-          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Release Automation & QA" class="w-full h-56 md:h-64 object-cover" />
+          <div class="aspect-[16/9] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop"
+              alt="Release Automation & QA"
+              class="w-full h-full object-cover"
+            />
+          </div>
           <div class="p-6 flex flex-col gap-3">
             <h3 class="text-xl font-bold">Release Automation & QA</h3>
-            <p class="text-slate-600 dark:text-slate-300">CI tasks for schema diffs, smoke tests, and rollout checks; improved deployment confidence and time-to-recover.</p>
+            <p class="text-slate-600 dark:text-slate-300">CI tasks for schema diffs, smoke tests, rollout checks — improved deployment confidence & TTR.</p>
             <div class="mt-1 flex flex-wrap gap-2 text-xs">
               <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">CI/CD</span>
               <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Shell</span>
@@ -213,35 +216,31 @@
           <span class="absolute left-0 top-9 -ml-1.5 h-3 w-3 rounded-full bg-brand-600"></span>
           <div class="flex items-center gap-3 text-sm text-slate-500">
             <span>Software Engineer — Product Platforms (IFS R&D International)</span>
-            <span>•</span>
-            <span>Mar 2022 – Jul 2025</span>
-            <span>•</span>
-            <span>Colombo, LK</span>
+            <span>•</span><span>Mar 2022 – Jul 2025</span>
+            <span>•</span><span>Colombo, LK</span>
           </div>
           <h3 class="font-bold mt-1">Backend, APIs & Integrations • Performance & Reliability</h3>
           <ul class="mt-2 list-disc pl-5 text-slate-600 dark:text-slate-300">
-            <li>Designed and maintained enterprise authz features (role-based access, ACLs); improved configuration UX and validation.</li>
-            <li>Built and enhanced REST APIs and data controls; added import/export workflows and filter validation.</li>
-            <li>Optimized Java + SQL/PLSQL and Azure/Okta SCIM provisioning to reduce latency and improve reliability.</li>
+            <li>Designed and maintained enterprise authz features (RBAC/ACLs); improved configuration UX & validation.</li>
+            <li>Built REST APIs and data controls; added import/export workflows and filter validation.</li>
+            <li>Optimized Java + SQL/PLSQL and Azure/Okta SCIM provisioning, reducing latency and errors.</li>
             <li>Implemented digital-signature workflows and ensured durable storage of signed artifacts.</li>
-            <li>Wrote unit/integration tests (Cucumber), documentation, and facilitated Agile ceremonies as Scrum Master.</li>
-            <li>Conducted resilience testing via chaos engineering (DoS, memory, and network fault injections).</li>
+            <li>Tests & quality: unit/integration (Cucumber), docs, and Scrum facilitation.</li>
+            <li>Resilience: chaos experiments (DoS/memory/network fault injections).</li>
           </ul>
         </li>
         <li class="reveal relative pl-6 py-6">
           <span class="absolute left-0 top-9 -ml-1.5 h-3 w-3 rounded-full bg-brand-600"></span>
           <div class="flex items-center gap-3 text-sm text-slate-500">
             <span>Freelance / Side Projects</span>
-            <span>•</span>
-            <span>Ongoing</span>
-            <span>•</span>
-            <span>Los Angeles, CA</span>
+            <span>•</span><span>Ongoing</span>
+            <span>•</span><span>Los Angeles, CA</span>
           </div>
           <h3 class="font-bold mt-1">Entrepreneurial • Digital Marketing • AI-assisted Content</h3>
           <ul class="mt-2 list-disc pl-5 text-slate-600 dark:text-slate-300">
-            <li>Built & managed Shopify/WordPress brands; SEO + Meta Ads; conversion-focused UX.</li>
-            <li>Launched AdSense sites with AI-assisted content; set up GA & Search Console; optimized conversions.</li>
-            <li>Created brand assets and storefront UIs; automated repetitive workflows.</li>
+            <li>Shopify/WordPress brands; SEO + Meta Ads; conversion-focused UX.</li>
+            <li>AdSense sites with AI-assisted content; GA + Search Console; conversion optimization.</li>
+            <li>Brand assets and storefront UIs; automated repetitive workflows.</li>
           </ul>
         </li>
       </ol>
@@ -256,22 +255,10 @@
         <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">Practical stack for shipping reliable, secure software.</p>
       </div>
       <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
-          <h4 class="font-bold">Backend</h4>
-          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Java, Node.js, REST, OAuth2, SCIM</p>
-        </div>
-        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
-          <h4 class="font-bold">Data</h4>
-          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Oracle, SQL/PLSQL, MongoDB, Indexing & Tuning</p>
-        </div>
-        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
-          <h4 class="font-bold">Frontend</h4>
-          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">React, Tailwind, IFS Aurena</p>
-        </div>
-        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
-          <h4 class="font-bold">Dev & Ops</h4>
-          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">GitHub/GitLab/Bitbucket, CI/CD (Pipelines), Postman, Shell</p>
-        </div>
+        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-5"><h4 class="font-bold">Backend</h4><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Java, Node.js, REST, OAuth2, SCIM</p></div>
+        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-5"><h4 class="font-bold">Data</h4><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Oracle, SQL/PLSQL, MongoDB, Indexing & Tuning</p></div>
+        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-5"><h4 class="font-bold">Frontend</h4><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">React, Tailwind, IFS Aurena</p></div>
+        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-5"><h4 class="font-bold">Dev & Ops</h4><p class="mt-2 text-sm text-slate-600 dark:text-slate-300">GitHub/GitLab/Bitbucket, CI/CD, Postman, Shell</p></div>
       </div>
     </div>
   </section>
@@ -284,18 +271,9 @@
         <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">I partner with teams to ship features that matter.</p>
       </div>
       <div class="mt-8 grid md:grid-cols-3 gap-5">
-        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <div class="flex items-center gap-2 font-bold"><i data-lucide="api"></i> API Development</div>
-          <p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">Design, auth, versioning, and docs for maintainable services.</p>
-        </div>
-        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <div class="flex items-center gap-2 font-bold"><i data-lucide="sparkles"></i> Performance & Tuning</div>
-          <p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">Query plans, indexes, and caching to make apps feel instant.</p>
-        </div>
-        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <div class="flex items-center gap-2 font-bold"><i data-lucide="shield"></i> Security & Auth</div>
-          <p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">RBAC, ACLs, and secure flows for enterprise environments.</p>
-        </div>
+        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6"><div class="flex items-center gap-2 font-bold"><i data-lucide="api"></i> API Development</div><p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">Design, auth, versioning, and docs for maintainable services.</p></div>
+        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6"><div class="flex items-center gap-2 font-bold"><i data-lucide="sparkles"></i> Performance & Tuning</div><p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">Query plans, indexing, caching, and profiling.</p></div>
+        <div class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6"><div class="flex items-center gap-2 font-bold"><i data-lucide="shield"></i> Security & Auth</div><p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">RBAC, ACLs, and secure enterprise flows.</p></div>
       </div>
     </div>
   </section>
@@ -320,13 +298,12 @@
           </div>
         </div>
         <form class="reveal rounded-2xl border border-slate-200 dark:border-slate-800 p-6 grid gap-3" action="https://formspree.io/f/xqadnlbj" method="POST">
-          <!-- TIP: Replace action with your Formspree form ID or remove form entirely -->
           <div class="grid sm:grid-cols-2 gap-3">
             <input class="rounded-xl border border-slate-300/70 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 px-4 py-3" placeholder="Your name" name="name" required>
             <input class="rounded-xl border border-slate-300/70 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 px-4 py-3" placeholder="Email" type="email" name="email" required>
           </div>
           <input class="rounded-xl border border-slate-300/70 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 px-4 py-3" placeholder="Subject" name="subject">
-          <textarea class="rounded-xl border border-slate-300/70 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 px-4 py-3" rows="5" placeholder="Project details" name="message" required></textarea>
+          <textarea class="rounded-2xl border border-slate-300/70 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 px-4 py-3" rows="5" placeholder="Project details" name="message" required></textarea>
           <button class="rounded-xl bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 font-semibold" type="submit">Send</button>
           <p class="text-xs text-slate-500">By sending, you accept email contact. No data is stored on this site.</p>
         </form>
@@ -346,41 +323,34 @@
   </footer>
 
   <script>
-    // Theme toggle with persistence
+    // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     const stored = localStorage.getItem('theme');
-    if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      root.classList.add('dark');
-    }
+    if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) root.classList.add('dark');
     themeToggle.addEventListener('click', () => {
       root.classList.toggle('dark');
       localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
     });
 
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); observer.unobserve(e.target);} });
-    }, { threshold: 0.08 });
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); observer.unobserve(e.target);} }); }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
     // Icons
     lucide.createIcons();
 
-    // Tilt effect for cards
+    // Tilt
     document.querySelectorAll('.tilt').forEach(card => {
       const damp = 6;
       card.addEventListener('mousemove', (e) => {
         const r = card.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width;
         const y = (e.clientY - r.top) / r.height;
-        const rx = (y - 0.5) * damp; // rotateX
-        const ry = (x - 0.5) * -damp; // rotateY
+        const rx = (y - 0.5) * damp, ry = (x - 0.5) * -damp;
         card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
       });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-      });
+      card.addEventListener('mouseleave', () => { card.style.transform = 'rotateX(0deg) rotateY(0deg)'; });
     });
 
     // Year
